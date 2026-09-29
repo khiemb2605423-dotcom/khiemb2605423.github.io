@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f4f2ec">
+	<meta name="description" content="Trang giới thiệu cá nhân của Nguyễn Việt Khiêm, hiện đang học đại học và yêu thích chơi game.">
+	<title>Nguyễn Việt Khiêm — Hồ sơ cá nhân</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			color-scheme: light;
+			--paper: #f4f2ec;
+			--ink: #202723;
+			--muted: #69716b;
+			--line: #d9d9ce;
+			--green: #45634d;
+			--lime: #d7e36b;
+			--coral: #d9775e;
+			--white: #fffefa;
+			font-family: "DM Sans", sans-serif;
+			font-synthesis: none;
+			text-rendering: optimizeLegibility;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body {
+			margin: 0;
+			background-color: var(--paper);
+			background-image: radial-gradient(#87907824 0.7px, transparent 0.7px);
+			background-size: 13px 13px;
+			color: var(--ink);
+		}
+		a { color: inherit; }
+		.shell { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+		.topbar {
+			height: 76px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid var(--line);
+		}
+		.wordmark {
+			font-family: Manrope, sans-serif;
+			font-size: 15px;
+			font-weight: 800;
+			letter-spacing: 0;
+			text-decoration: none;
+		}
+		.wordmark span { color: var(--coral); }
+		nav { display: flex; gap: 30px; }
+		nav a {
+			color: var(--muted);
+			font-size: 13px;
+			text-decoration: none;
+			transition: color 160ms ease;
+		}
+		nav a:hover, nav a:focus-visible { color: var(--green); }
+		:focus-visible { outline: 2px solid var(--coral); outline-offset: 4px; }
+
+		.hero {
+			min-height: 590px;
+			display: grid;
+			grid-template-columns: 1.03fr 0.97fr;
+			align-items: center;
+			gap: 70px;
+			padding-block: 58px 72px;
+		}
+		.eyebrow {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			color: var(--green);
+			font-size: 12px;
+			font-weight: 700;
+			letter-spacing: 0;
+			text-transform: uppercase;
+		}
+		.eyebrow::before { width: 25px; height: 2px; background: var(--coral); content: ""; }
+		h1, h2, p { margin-top: 0; }
+		h1 {
+			max-width: 620px;
+			margin-bottom: 22px;
+			font-family: Manrope, sans-serif;
+			font-size: clamp(46px, 6vw, 76px);
+			font-weight: 700;
+			letter-spacing: 0;
+			line-height: 1.06;
+		}
+		h1 span { color: var(--green); }
+		.intro { max-width: 460px; margin-bottom: 30px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+		.hero-meta { display: flex; flex-wrap: wrap; gap: 10px; }
+		.meta-chip {
+			padding: 9px 13px;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			background: #fffefa8c;
+			font-size: 12px;
+			font-weight: 600;
+		}
+		.meta-chip strong { color: var(--green); }
+
+		.feature-visual {
+			position: relative;
+			min-height: 390px;
+			overflow: hidden;
+			border-radius: 3px;
+			background: #34443c;
+			isolation: isolate;
+		}
+		.feature-visual img {
+			position: absolute;
+			z-index: -2;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			inset: 0;
+		}
+		.feature-visual::after {
+			position: absolute;
+			z-index: -1;
+			background: linear-gradient(180deg, #1a28221a 25%, #1a2822d9 100%);
+			content: "";
+			inset: 0;
+		}
+		.visual-label {
+			position: absolute;
+			right: 23px;
+			bottom: 22px;
+			left: 23px;
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			color: white;
+		}
+		.visual-label p { margin: 0; font-size: 12px; opacity: 0.82; }
+		.visual-label strong { display: block; margin-top: 5px; font-family: Manrope, sans-serif; font-size: 20px; }
+		.visual-mark {
+			display: grid;
+			width: 48px;
+			aspect-ratio: 1;
+			place-items: center;
+			border-radius: 50%;
+			background: var(--lime);
+			color: var(--ink);
+			font-family: Manrope, sans-serif;
+			font-weight: 800;
+		}
+		.visual-stamp {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			padding: 8px 11px;
+			border: 1px solid #ffffff80;
+			border-radius: 2px;
+			color: white;
+			font-size: 10px;
+			font-weight: 700;
+			letter-spacing: 0;
+			text-transform: uppercase;
+		}
+
+		.section { padding-block: 74px; border-top: 1px solid var(--line); }
+		.section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
+		.section-index { color: var(--coral); font-size: 12px; font-weight: 700; }
+		h2 { margin-bottom: 0; font-family: Manrope, sans-serif; font-size: 30px; font-weight: 700; }
+		.section-note { max-width: 330px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+		.about-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+		.fact { min-height: 130px; padding: 22px 22px 22px 0; border-bottom: 1px solid var(--line); }
+		.fact:not(:nth-child(3n)) { border-right: 1px solid var(--line); }
+		.fact:nth-child(3n + 2), .fact:nth-child(3n + 3) { padding-left: 22px; }
+		.fact-label { display: block; margin-bottom: 13px; color: var(--muted); font-size: 12px; }
+		.fact-value { font-family: Manrope, sans-serif; font-size: 17px; font-weight: 700; }
+		.fact-value small { display: block; margin-top: 6px; color: var(--muted); font-family: "DM Sans", sans-serif; font-size: 12px; font-weight: 400; }
+
+		.path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+		.path-item {
+			min-height: 188px;
+			padding: 24px;
+			border: 1px solid var(--line);
+			border-radius: 3px;
+			background: var(--white);
+		}
+		.path-item:nth-child(2) { background: #e7ead7; }
+		.path-top { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; }
+		.path-symbol { color: var(--coral); font-size: 18px; }
+		.path-item h3 { margin: 28px 0 8px; font-family: Manrope, sans-serif; font-size: 20px; }
+		.path-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+
+		.closing {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 30px;
+			margin-block: 26px 50px;
+			padding: 30px 32px;
+			border-radius: 3px;
+			background: var(--green);
+			color: white;
+		}
+		.closing p { margin: 0; color: #ffffffc7; font-size: 13px; }
+		.closing h2 { margin-bottom: 7px; font-size: 23px; }
+		.closing-mark { color: var(--lime); font-family: Manrope, sans-serif; font-size: 42px; font-weight: 800; }
+		footer {
+			display: flex;
+			justify-content: space-between;
+			padding-block: 20px 25px;
+			border-top: 1px solid var(--line);
+			color: var(--muted);
+			font-size: 11px;
+		}
+
+		@media (max-width: 760px) {
+			.shell { width: min(100% - 36px, 560px); }
+			.topbar { height: 66px; }
+			nav { gap: 15px; }
+			nav a { font-size: 11px; }
+			.hero { min-height: auto; grid-template-columns: 1fr; gap: 36px; padding-block: 64px 48px; }
+			h1 { font-size: clamp(44px, 12vw, 64px); }
+			.feature-visual { min-height: 330px; }
+			.section { padding-block: 52px; }
+			.section-heading { align-items: start; flex-direction: column; gap: 12px; }
+			.about-grid { grid-template-columns: repeat(2, 1fr); }
+			.fact { min-height: 118px; padding-right: 12px; }
+			.fact:not(:nth-child(3n)) { border-right: 0; }
+			.fact:nth-child(3n + 2), .fact:nth-child(3n + 3) { padding-left: 0; }
+			.fact:nth-child(odd) { border-right: 1px solid var(--line); }
+			.fact:nth-child(even) { padding-left: 16px; }
+			.path-grid { grid-template-columns: 1fr; }
+			.path-item { min-height: 160px; }
+			.closing { padding: 24px; }
+		}
+		@media (max-width: 420px) {
+			.shell { width: calc(100% - 28px); }
+			.wordmark { font-size: 13px; }
+			nav { gap: 10px; }
+			nav a { font-size: 10px; }
+			.feature-visual { min-height: 280px; }
+			.meta-chip { font-size: 11px; }
+			footer { gap: 12px; flex-direction: column; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			*, *::before, *::after { transition-duration: 0.01ms !important; }
+		}
+	</style>
+</head>
+<body>
+	<div class="shell">
+		<header class="topbar">
+			<a class="wordmark" href="#home" aria-label="Nguyễn Việt Khiêm, về đầu trang">KHIÊM<span>.</span></a>
+			<nav aria-label="Điều hướng chính">
+				<a href="#about">Giới thiệu</a>
+				<a href="#journey">Hành trình</a>
+				<a href="#interests">Sở thích</a>
+			</nav>
+		</header>
+
+		<main>
+			<section class="hero" id="home" aria-labelledby="main-title">
+				<div>
+					<p class="eyebrow">Hồ sơ cá nhân · Cần Thơ</p>
+					<h1 id="main-title">Nguyễn<br>Việt <span>Khiêm</span></h1>
+					<p class="intro">Xin chào, mình là Khiêm. Mình đang học đại học, yêu thích chơi game và từng ngày khám phá thêm những điều mới mẻ về bản thân.</p>
+					<div class="hero-meta" aria-label="Thông tin nhanh">
+						<span class="meta-chip"><strong>14.12.2008</strong> · Ngày sinh</span>
+						<span class="meta-chip">Cần Thơ · Việt Nam</span>
+					</div>
+				</div>
+				<div class="feature-visual" aria-label="Không gian chơi game">
+					<img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1100&q=85" alt="Góc máy tính chơi game với ánh sáng nhiều màu" fetchpriority="high">
+					<span class="visual-stamp">Một chút về mình</span>
+					<div class="visual-label">
+						<div><p>Ngoài giờ học</p><strong>Thích chơi game</strong></div>
+						<span class="visual-mark" aria-hidden="true">VK</span>
+					</div>
+				</div>
+			</section>
+
+			<section class="section" id="about" aria-labelledby="about-title">
+				<div class="section-heading">
+					<div><span class="section-index">01 / THÔNG TIN</span><h2 id="about-title">Vài nét về mình</h2></div>
+					<p class="section-note">Một vài thông tin cơ bản để bạn hiểu thêm về mình.</p>
+				</div>
+				<div class="about-grid">
+					<div class="fact"><span class="fact-label">Họ và tên</span><span class="fact-value">Nguyễn Việt Khiêm</span></div>
+					<div class="fact"><span class="fact-label">Ngày sinh</span><span class="fact-value">14 tháng 12, 2008</span></div>
+					<div class="fact"><span class="fact-label">Nơi sống</span><span class="fact-value">Cần Thơ<small>Việt Nam</small></span></div>
+					<div class="fact"><span class="fact-label">Quá trình học</span><span class="fact-value">Đại học</span></div>
+					<div class="fact"><span class="fact-label">Lĩnh vực chuyên môn</span><span class="fact-value">Đang khám phá<small>Chưa chọn lĩnh vực cụ thể</small></span></div>
+					<div class="fact"><span class="fact-label">Kinh nghiệm</span><span class="fact-value">Chưa có<small>Sẵn sàng học hỏi và tích lũy</small></span></div>
+				</div>
+			</section>
+
+			<section class="section" id="journey" aria-labelledby="journey-title">
+				<div class="section-heading">
+					<div><span class="section-index">02 / HÀNH TRÌNH</span><h2 id="journey-title">Đang trên đường khám phá</h2></div>
+					<p class="section-note">Mỗi người có một nhịp phát triển riêng. Đây là điểm bắt đầu của mình.</p>
+				</div>
+				<div class="path-grid">
+					<article class="path-item">
+						<div class="path-top"><span>HỌC TẬP</span><span class="path-symbol" aria-hidden="true">↗</span></div>
+						<h3>Đại học</h3>
+						<p>Mình đang theo đuổi hành trình học tập và tìm hiểu thêm về những lĩnh vực phù hợp.</p>
+					</article>
+					<article class="path-item">
+						<div class="path-top"><span>THÀNH TÍCH</span><span class="path-symbol" aria-hidden="true">✳</span></div>
+						<h3>Chương mới đang mở</h3>
+						<p>Hiện chưa có thành tích cá nhân nổi bật để chia sẻ. Mình sẽ cập nhật khi có những cột mốc mới.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="interests" aria-labelledby="interests-title">
+				<div class="section-heading">
+					<div><span class="section-index">03 / NGOÀI GIỜ HỌC</span><h2 id="interests-title">Sở thích</h2></div>
+					<p class="section-note">Khoảng thời gian dành cho điều mình yêu thích.</p>
+				</div>
+				<div class="closing">
+					<div><h2>Chơi game</h2><p>Một sở thích giúp mình thư giãn sau những giờ học.</p></div>
+					<span class="closing-mark" aria-hidden="true">PLAY</span>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<span>© 2026 Nguyễn Việt Khiêm</span>
+			<span>Một trang nhỏ về mình · Cần Thơ, Việt Nam</span>
+		</footer>
+	</div>
+</body>
+</html>
